@@ -5,6 +5,7 @@
 bin/
 gen/
 out/
+target/
 
 # Gradle files
 .gradle/
@@ -23,6 +24,4 @@ build/
 *.iml
 *.ipr
 *.iws
-
-#gradle
-.gradle/
+.idea
