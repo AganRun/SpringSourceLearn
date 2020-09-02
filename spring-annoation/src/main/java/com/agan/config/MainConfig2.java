@@ -11,7 +11,7 @@ import org.springframework.context.annotation.*;
 /**
  * @author agan
  */
-@Configuration
+//@Configuration
 /** 类中组件统一设置。满足当前条件，这个类中配置的所有bean注册才能生效；*/
 @Conditional(DayCondition.class)
 /**

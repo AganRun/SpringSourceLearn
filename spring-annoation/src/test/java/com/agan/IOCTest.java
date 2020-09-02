@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class IOCTest {
 
-    AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
+    AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
 
     @Test
     public void testImport() {
