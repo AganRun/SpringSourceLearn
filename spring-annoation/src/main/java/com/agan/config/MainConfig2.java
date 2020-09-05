@@ -11,9 +11,9 @@ import org.springframework.context.annotation.*;
 /**
  * @author agan
  */
-//@Configuration
+@Configuration
 /** 类中组件统一设置。满足当前条件，这个类中配置的所有bean注册才能生效；*/
-@Conditional(DayCondition.class)
+//@Conditional(DayCondition.class)
 /**
  * 给容器中注册组件；
  * 1）、包扫描+组件标注注解（@Controller/@Service/@Repository/@Component）[自己写的类]
@@ -40,7 +40,7 @@ public class MainConfig2 {
      * 以后每次获取就是直接从容器（map.get()）中拿，
      * request：同一次请求创建一个实例
      * session：同一个session创建一个实例
-     * @Lazy:懒加载(单例是使用)： 懒加载：容器启动不创建对象。第一次使用(获取)Bean创建对象，并初始化；
+     * @Lazy:懒加载(单例时使用)： 懒加载：容器启动不创建对象。第一次使用(获取)Bean创建对象，并初始化；
      */
 //    @Scope("prototype")
 //    @Lazy

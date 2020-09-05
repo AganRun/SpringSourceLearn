@@ -12,8 +12,13 @@ import java.util.Map;
 
 public class IOCTest {
 
-    AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
+    AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
 
+    /**
+     * 通过Import直接注入Color
+     * 通过Import->Selector注入Blue
+     * 通过Import->ImportBeanDefinitionRegistrar->判断：如果环境中已经有了BLue，则向注册器注册彩虹
+     */
     @Test
     public void testImport() {
         printBeans(applicationContext);
@@ -58,6 +63,14 @@ public class IOCTest {
         System.out.println(persons);
     }
 
+    @Test
+    public void testLazy() {
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
+        System.out.println("容器启动结束");
+        System.out.println("获取Person");
+        Object bean = applicationContext.getBean("person");
+        System.out.println(bean);
+    }
     @Test
     public void testSingleTon() {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
