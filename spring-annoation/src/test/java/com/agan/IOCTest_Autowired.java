@@ -1,5 +1,6 @@
 package com.agan;
 
+import com.agan.bean.Dog;
 import com.agan.bean.Person;
 import com.agan.config.MainConfigOfAutowired;
 import com.agan.config.MainConfigOfPropertyValues;
@@ -22,5 +23,12 @@ public class IOCTest_Autowired {
 
         Map<String, PersonDao> map = context.getBeansOfType(PersonDao.class);
         System.out.println(map);
+    }
+
+    @Test
+    public void testAware() {
+        System.out.println(context.getBean("personDao1"));;
+        Dog dog = context.getBean(Dog.class);
+        System.out.println(dog.context.getBean("personDao1"));
     }
 }

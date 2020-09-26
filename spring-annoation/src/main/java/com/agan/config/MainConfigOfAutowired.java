@@ -1,5 +1,6 @@
 package com.agan.config;
 
+import com.agan.bean.Dog;
 import com.agan.bean.Person;
 import com.agan.dao.PersonDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,4 +65,8 @@ public class MainConfigOfAutowired {
         return new PersonDao(2);
     }
 
+    @Bean
+    public Dog dog() {
+        return new Dog();
+    }
 }

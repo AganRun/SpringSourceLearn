@@ -19,8 +19,13 @@ public class PersonServiceImpl implements PersonService {
 //    public PersonDao personDao2;
 
 //    @Resource(name = "personDao1")       //JAVA规范，默认按属性名，可以指定名称，不支持@Primary
-    @Inject     //支持@Primary,支持Spring的装配注解
+//    @Inject     //支持@Primary,支持Spring的装配注解
     public PersonDao personDao2;
+
+    @Autowired
+    public void setPersonDao2(PersonDao personDao2) {
+        this.personDao2 = personDao2;
+    }
 
     @Override
     public String toString() {
